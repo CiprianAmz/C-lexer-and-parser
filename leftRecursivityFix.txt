@@ -1,0 +1,61 @@
+declaration-list -> declaration-list declaration
+declaration-list -> declaration
+
+declaration-list -> declaration declaration-list1
+declaration-list1 -> declaration declaration-list1
+declaration-list1 -> ε 
+
+--------------------------------
+
+param-list -> param-list , param
+param-list -> param
+
+param-list -> param param-list1
+param-list1 -> , param param-list1
+param-list1 -> ε
+
+--------------------------------
+
+local-declarations -> local-declarations var-declaration
+local-declarations -> ε
+
+local-declarations -> local-declarations1
+local-declarations1 -> var-declaration local-declarations1
+local-declarations1 -> ε
+
+-------------------------------
+
+statement-list -> statement-list statement
+statement-list -> ε
+
+statement-list -> statement-list1
+statement-list1 -> statement statement-list1
+statement-list1 -> ε
+
+-------------------------------
+
+additive-expression -> additive-expression addop term
+additive-expression -> term
+
+additive-expression -> term additive-expression1
+additive-expression1 -> addop term additive-expression1
+additive-expression1 -> ε
+
+-------------------------------
+
+term -> term mulop factor
+term -> factor
+
+term -> factor term1
+term1 -> mulop mulop term1
+term1 -> ε
+
+-------------------------------
+
+arg-list -> arg-list , expression
+arg-list -> expression
+
+arg-list -> arg-list1
+arg-list1 -> , expression arg-list1
+arg-list1 -> ε
+
